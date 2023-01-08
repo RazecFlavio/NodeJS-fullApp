@@ -27,6 +27,8 @@ class ImportCategoryUseCase {
           });
         })
         .on("end", () => {
+          fs.promises.unlink(file.path); //remove o arquivo apos a finalizacao
+
           resolve(categories);
         })
         .on("error", (err) => {
