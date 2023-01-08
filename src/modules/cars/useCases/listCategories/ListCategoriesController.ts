@@ -2,10 +2,10 @@ import { Request, Response } from "express";
 import { ListCategoriesUseCase } from "./ListCategoriesUseCase";
 
 class ListCategoriesController {
-    constructor(private listCategoriesUseCase: ListCategoriesUseCase) { }
-    handle(request: Request, response: Response): Response {
-
-        return response.json(this.listCategoriesUseCase.execute());
-    }
+  constructor(private _list: ListCategoriesUseCase) {}
+  handle(request: Request, response: Response): Response {
+    const categories = this._list.execute();
+    return response.json(categories);
+  }
 }
-export { ListCategoriesController }
+export { ListCategoriesController };
