@@ -1,0 +1,40 @@
+//imagens disponiveis dentro do DOCKER
+::link -> https://hub.docker.com/search?q=
+
+
+
+Docker
+- ferramenta para criacao de containers
+    containers
+        - Ambiente isolado
+- simular ambiente de producao no ambiente de desenvolvimento.
+
+
+
+
+1- Após criar Dockefile - 
+
+executar comando -->>  docker build -t rentx .
+
+comandos -> 
+
+criar containers:  docker build -t rentx .
+listar containers:  docker ps OU docker ps -a -->> para listar todos nao apenas os que estao rodando
+rodar container: docker run -p 3333:3333 rentx    --> mapeamento de porta "porta_pc:porta_docker"
+acessar o container: docker exec -it "nome_container" /bin/bash   --> acesso o diretorio do container.
+log dos docker: docker log "name_container"   --> se utilizar o -f no comando fica observando os logs.
+
+remover container: docker rm "docker_id ou docker_name" --> precisa estar parado.
+start AND stop: docker start "id ou name" /  docker stop "id ou name"
+
+
+
+
+//docker compose 
+
+docker-compose start ----> Iniciar o serviço
+docker-compose stop ----> Parar o serviço
+
+docker-compose up ----> cria tudo
+docker-compose down ----> REMOVER tudo
+

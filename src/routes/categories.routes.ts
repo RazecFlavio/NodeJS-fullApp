@@ -12,6 +12,7 @@ const upload = multer({
 });
 
 categoriesRoutes.post("/", (request, response) => {
+  console.log('reload funfando')
   return createCategoryController.handle(request, response);
 });
 categoriesRoutes.get("/", (request, response) => {
